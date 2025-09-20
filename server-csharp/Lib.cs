@@ -82,6 +82,13 @@ public static partial class Module
     public static void Disconnect(ReducerContext ctx)
     {
         var player = ctx.Db.player.identity.Find(ctx.Sender) ?? throw new Exception("Player not found");
+        // Remove any circles from the arena
+        foreach (var circle in ctx.Db.circle.player_id.Filter(player.player_id))
+        {
+            var entity = ctx.Db.entity.entity_id.Find(circle.entity_id) ?? throw new Exception("Could not find circle");
+            ctx.Db.entity.entity_id.Delete(entity.entity_id);
+            ctx.Db.circle.entity_id.Delete(entity.entity_id);
+        }
         ctx.Db.logged_out_player.Insert(player);
         ctx.Db.player.identity.Delete(player.identity);
     }
