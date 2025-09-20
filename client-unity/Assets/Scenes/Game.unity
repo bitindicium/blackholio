@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 379524459}
   - component: {fileID: 379524458}
   - component: {fileID: 379524457}
+  - component: {fileID: 379524460}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -178,6 +179,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &379524460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379524456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5229778048f1a48d2b497235c3ffad01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabManager
+  CirclePrefab: {fileID: 2609390680940653813, guid: 03d5d98fec498492ab6ce570ead3f709, type: 3}
+  FoodPrefab: {fileID: 4657316007836283768, guid: 63edfb8a5f58743c6b29793128d75e5a, type: 3}
+  PlayerPrefab: {fileID: 1229538541542183616, guid: 220a0971b5e75450d95596737fec42db, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
