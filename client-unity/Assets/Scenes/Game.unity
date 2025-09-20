@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdb37e2ca9da4c179168eae7b400e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderThickness: 2
+  borderMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &379524459
 Transform:
   m_ObjectHideFlags: 0
