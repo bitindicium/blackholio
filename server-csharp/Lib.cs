@@ -11,11 +11,11 @@ public static partial class Module
         public uint id;
         public ulong world_size;
     }
-    
+
     [Table(Name = "entity", Public = true)]
     public partial struct Entity
     {
-        [PrimaryKey, AutoInc] 
+        [PrimaryKey, AutoInc]
         public uint entity_id;
         public DbVector2 position;
         public uint mass;
@@ -39,7 +39,7 @@ public static partial class Module
         [PrimaryKey]
         public uint entity_id;
     }
-    
+
     [Table(Name = "player", Public = true)]
     public partial struct Player
     {
@@ -49,11 +49,11 @@ public static partial class Module
         public uint player_id;
         public string name;
     }
-    
-    [Reducer]
-    public static void Debug(ReducerContext ctx)
+
+    [Reducer(ReducerKind.ClientConnected)]
+    public static void Connect(ReducerContext ctx)
     {
-        Log.Info($"This reducer was called by {ctx.Sender}");	  
+        Log.Info($"{ctx.Sender} just connected.");
     }
 }
 
