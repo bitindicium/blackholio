@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviour
         // Get the world size from the config table and set up the arena
         var worldSize = Conn.Db.Config.Id.Find(0)!.WorldSize;
         SetupArena(worldSize);
+
+        // Call enter game with the player name 3Blave
+        ctx.Reducers.EnterGame("3Blave");
     }
 
     public static bool IsConnected()
@@ -116,6 +119,9 @@ public class GameManager : MonoBehaviour
             new Vector2(borderThickness, worldSize + borderThickness * 2.0f)); //East
         CreateBorderCube(new Vector2(-borderThickness / 2, worldSize / 2.0f),
             new Vector2(borderThickness, worldSize + borderThickness * 2.0f)); //West
+
+        // Set the world size for the camera controller
+        CameraController.WorldSize = worldSize;
     }
 
     private void CreateBorderCube(Vector2 position, Vector2 scale)
